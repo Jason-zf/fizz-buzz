@@ -17,7 +17,7 @@ public class FizzBuzzApplication {
 
     static String fizzBuzz(Integer digit) {
         String res = StringUtils.EMPTY;
-        if (digit.toString().contains("3")) {
+        if (digit.toString().contains("3") && StringUtils.containsNone(digit.toString(), "5")) {
             return FIZZ.getValue();
         }
         if (digit % 3 == 0) {
