@@ -50,4 +50,21 @@ public class FizzBuzzApplicationTest {
         assertEquals(Arrays.stream(FizzBuzzValue.values()).map(FizzBuzzValue::getValue).collect(Collectors.joining()), result);
     }
 
+    @Test
+    public void should_return_fizz_when_digit_contains_3() {
+        String result = fizzBuzz(13);
+        assertEquals(FIZZ.getValue(), result);
+    }
+
+    @Test
+    public void should_return_fizz_when_digit_contains_3_and_can_be_divided_evenly_by_5() {
+        String result = fizzBuzz(30);
+        assertEquals(FIZZ.getValue(), result);
+    }
+
+    @Test
+    public void should_return_fizz_when_digit_contains_3_and_can_be_divided_evenly_by_multi_divider() {
+        String result = fizzBuzz(35);
+        assertEquals(FIZZ.getValue(), result);
+    }
 }
