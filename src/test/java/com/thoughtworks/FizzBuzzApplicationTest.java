@@ -30,4 +30,10 @@ public class FizzBuzzApplicationTest {
         String result = fizzBuzz(7);
         assertEquals("whizz", result);
     }
+
+    @Test
+    public void should_reutrn_fizzbuzz_when_digit_can_be_divided_evenly_by_both_3_and_5() {
+        String result = fizzBuzz(15);
+        assertEquals("fizzbuzz", result);
+    }
 }

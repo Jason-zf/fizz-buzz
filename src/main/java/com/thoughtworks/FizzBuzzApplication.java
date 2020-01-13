@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class FizzBuzzApplication {
 
     public static void main(String[] args) {
@@ -10,15 +12,16 @@ public class FizzBuzzApplication {
     }
 
     static String fizzBuzz(Integer digit) {
+        String res = StringUtils.EMPTY;
         if (digit % 3 == 0) {
-            return "fizz";
+            res = StringUtils.join(res, "fizz");
         }
         if (digit % 5 == 0) {
-            return "buzz";
+            res = StringUtils.join(res, "buzz");
         }
         if (digit % 7 == 0) {
-            return "whizz";
+            res = StringUtils.join(res, "whizz");
         }
-        return digit.toString();
+        return StringUtils.isNotEmpty(res) ? res : digit.toString();
     }
 }
