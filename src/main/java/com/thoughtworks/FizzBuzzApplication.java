@@ -9,7 +9,7 @@ public class FizzBuzzApplication {
         }
     }
 
-    static String fizzBuzz(int digit) {
-        return "1";
+    static String fizzBuzz(Integer digit) {
+        return digit % 3 == 0 ? "fizz" : digit.toString();
     }
 }
