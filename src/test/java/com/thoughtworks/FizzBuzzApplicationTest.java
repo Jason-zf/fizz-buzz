@@ -24,4 +24,10 @@ public class FizzBuzzApplicationTest {
         String result = fizzBuzz(5);
         assertEquals("buzz", result);
     }
+
+    @Test
+    public void should_return_whizz_when_digit_can_be_divided_evenly_by_7() {
+        String result = fizzBuzz(7);
+        assertEquals("whizz", result);
+    }
 }

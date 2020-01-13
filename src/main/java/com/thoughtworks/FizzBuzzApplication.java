@@ -16,6 +16,9 @@ public class FizzBuzzApplication {
         if (digit % 5 == 0) {
             return "buzz";
         }
+        if (digit % 7 == 0) {
+            return "whizz";
+        }
         return digit.toString();
     }
 }
