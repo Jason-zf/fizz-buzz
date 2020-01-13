@@ -10,6 +10,12 @@ public class FizzBuzzApplication {
     }
 
     static String fizzBuzz(Integer digit) {
-        return digit % 3 == 0 ? "fizz" : digit.toString();
+        if (digit % 3 == 0) {
+            return "fizz";
+        }
+        if (digit % 5 == 0) {
+            return "buzz";
+        }
+        return digit.toString();
     }
 }
