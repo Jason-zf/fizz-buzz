@@ -1,5 +1,9 @@
 package com.thoughtworks;
 
+import static com.thoughtworks.common.FizzBuzzValue.BUZZ;
+import static com.thoughtworks.common.FizzBuzzValue.FIZZ;
+import static com.thoughtworks.common.FizzBuzzValue.WHIZZ;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class FizzBuzzApplication {
@@ -14,13 +18,13 @@ public class FizzBuzzApplication {
     static String fizzBuzz(Integer digit) {
         String res = StringUtils.EMPTY;
         if (digit % 3 == 0) {
-            res = StringUtils.join(res, "fizz");
+            res = StringUtils.join(res, FIZZ.getValue());
         }
         if (digit % 5 == 0) {
-            res = StringUtils.join(res, "buzz");
+            res = StringUtils.join(res, BUZZ.getValue());
         }
         if (digit % 7 == 0) {
-            res = StringUtils.join(res, "whizz");
+            res = StringUtils.join(res, WHIZZ.getValue());
         }
         return StringUtils.isNotEmpty(res) ? res : digit.toString();
     }

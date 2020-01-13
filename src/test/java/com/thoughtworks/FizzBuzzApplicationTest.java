@@ -1,8 +1,15 @@
 package com.thoughtworks;
 
 import static com.thoughtworks.FizzBuzzApplication.fizzBuzz;
+import static com.thoughtworks.common.FizzBuzzValue.BUZZ;
+import static com.thoughtworks.common.FizzBuzzValue.FIZZ;
+import static com.thoughtworks.common.FizzBuzzValue.WHIZZ;
 import static org.junit.Assert.assertEquals;
 
+import com.thoughtworks.common.FizzBuzzValue;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 public class FizzBuzzApplicationTest {
@@ -16,24 +23,31 @@ public class FizzBuzzApplicationTest {
     @Test
     public void should_return_fizz_when_digit_can_be_divided_evenly_by_3() {
         String result = fizzBuzz(3);
-        assertEquals("fizz", result);
+        assertEquals(FIZZ.getValue(), result);
     }
 
     @Test
     public void should_return_buzz_when_digit_can_be_divided_evenly_by_5() {
         String result = fizzBuzz(5);
-        assertEquals("buzz", result);
+        assertEquals(BUZZ.getValue(), result);
     }
 
     @Test
     public void should_return_whizz_when_digit_can_be_divided_evenly_by_7() {
         String result = fizzBuzz(7);
-        assertEquals("whizz", result);
+        assertEquals(WHIZZ.getValue(), result);
     }
 
     @Test
-    public void should_reutrn_fizzbuzz_when_digit_can_be_divided_evenly_by_both_3_and_5() {
+    public void should_return_fizzbuzz_when_digit_can_be_divided_evenly_by_both_3_and_5() {
         String result = fizzBuzz(15);
-        assertEquals("fizzbuzz", result);
+        assertEquals(StringUtils.join(FIZZ.getValue(), BUZZ.getValue()), result);
     }
+
+    @Test
+    public void should_return_fizzBuzzWhizz_when_digit_can_be_divided_by_3_and_5_and_7() {
+        String result = fizzBuzz(105);
+        assertEquals(Arrays.stream(FizzBuzzValue.values()).map(FizzBuzzValue::getValue).collect(Collectors.joining()), result);
+    }
+
 }
