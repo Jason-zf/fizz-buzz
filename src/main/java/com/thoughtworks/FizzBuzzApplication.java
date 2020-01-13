@@ -20,7 +20,7 @@ public class FizzBuzzApplication {
         if (digit.toString().contains("3") && StringUtils.containsNone(digit.toString(), "5")) {
             return FIZZ.getValue();
         }
-        if (digit % 3 == 0) {
+        if (digit % 3 == 0 && StringUtils.containsNone(digit.toString(), "5")) {
             res = StringUtils.join(res, FIZZ.getValue());
         }
         if (digit % 5 == 0) {

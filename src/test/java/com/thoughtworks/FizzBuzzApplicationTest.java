@@ -40,13 +40,13 @@ public class FizzBuzzApplicationTest {
 
     @Test
     public void should_return_fizzbuzz_when_digit_can_be_divided_evenly_by_both_3_and_5() {
-        String result = fizzBuzz(15);
+        String result = fizzBuzz(60);
         assertEquals(FIZZ_BUZZ.getValue(), result);
     }
 
     @Test
     public void should_return_fizzBuzzWhizz_when_digit_can_be_divided_by_3_and_5_and_7() {
-        String result = fizzBuzz(105);
+        String result = fizzBuzz(210);
         assertEquals(FIZZ_BUZZ_WHIZZ.getValue(), result);
     }
 
@@ -71,7 +71,15 @@ public class FizzBuzzApplicationTest {
 
     @Test
     public void should_return_buzz_when_digit_contains_5() {
-        String result = fizzBuzz(35);
+        Integer generate = GenerateUtil.generate(2, "5", "3", 5);
+        String result = fizzBuzz(generate);
+        assertEquals(BUZZ.getValue(), result);
+    }
+
+    @Test
+    public void should_return_buzz_when_digit_contains_5_and_can_be_divided_by_5_and_7() {
+        Integer generate = GenerateUtil.generate(1, "5", "", 5, 7);
+        String result = fizzBuzz(generate);
         assertEquals(BUZZ_WHIZZ.getValue(), result);
     }
 }
