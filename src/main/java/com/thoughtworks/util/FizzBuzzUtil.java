@@ -11,4 +11,8 @@ public class FizzBuzzUtil {
     public static boolean containsNone(Integer digit, Integer searchDigit) {
         return StringUtils.containsNone(digit.toString(), searchDigit.toString());
     }
+
+    public static boolean divide(Integer divided, Integer divider) {
+        return divided % divider == 0;
+    }
 }

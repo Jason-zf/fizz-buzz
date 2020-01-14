@@ -2,6 +2,7 @@ package com.thoughtworks.util;
 
 import static com.thoughtworks.util.FizzBuzzUtil.contains;
 import static com.thoughtworks.util.FizzBuzzUtil.containsNone;
+import static com.thoughtworks.util.FizzBuzzUtil.divide;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -27,5 +28,15 @@ public class FizzBuzzUtilTest {
     @Test
     public void should_return_false_when_check_35_containsNone_3() {
         assertFalse(containsNone(35, 3));
+    }
+
+    @Test
+    public void should_return_true_when_35_divide_5() {
+        assertTrue(divide(35, 5));
+    }
+
+    @Test
+    public void should_return_false_when_35_divide_4() {
+        assertFalse(divide(35, 4));
     }
 }

@@ -22,16 +22,17 @@ public class FizzBuzzApplication {
 
     static String fizzBuzz(Integer digit) {
         String res = StringUtils.EMPTY;
-        if (FizzBuzzUtil.contains(digit, THREE) && (StringUtils.containsNone(digit.toString(), "5") || FizzBuzzUtil.contains(digit, SEVEN))) {
+        boolean contains7OrContainsNone5 = FizzBuzzUtil.containsNone(digit, FIVE) || FizzBuzzUtil.contains(digit, SEVEN);
+        if (FizzBuzzUtil.contains(digit, THREE) && contains7OrContainsNone5) {
             return FIZZ.getValue();
         }
-        if (digit % 3 == 0 && (FizzBuzzUtil.containsNone(digit, FIVE) || FizzBuzzUtil.contains(digit, SEVEN))) {
+        if (FizzBuzzUtil.divide(digit, THREE) && contains7OrContainsNone5) {
             res = StringUtils.join(res, FIZZ.getValue());
         }
-        if (digit % 5 == 0 && FizzBuzzUtil.containsNone(digit, SEVEN)) {
+        if (FizzBuzzUtil.divide(digit, FIVE) && FizzBuzzUtil.containsNone(digit, SEVEN)) {
             res = StringUtils.join(res, BUZZ.getValue());
         }
-        if (digit % 7 == 0) {
+        if (FizzBuzzUtil.divide(digit, SEVEN)) {
             res = StringUtils.join(res, WHIZZ.getValue());
         }
         return StringUtils.isNotEmpty(res) ? res : digit.toString();
