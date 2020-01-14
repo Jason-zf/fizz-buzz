@@ -1,13 +1,13 @@
 package com.thoughtworks.common;
 
 public enum FizzBuzzValue {
-    FIZZ("fizz"),
-    BUZZ("buzz"),
-    WHIZZ("whizz"),
-    FIZZ_BUZZ("fizzbuzz"),
-    FIZZ_WHIZZ("fizzwhizz"),
-    BUZZ_WHIZZ("buzzwhizz"),
-    FIZZ_BUZZ_WHIZZ("fizzbuzzwhizz");
+    FIZZ("Fizz"),
+    BUZZ("Buzz"),
+    WHIZZ("Whizz"),
+    FIZZ_BUZZ("FizzBuzz"),
+    FIZZ_WHIZZ("FizzWhizz"),
+    BUZZ_WHIZZ("BuzzWhizz"),
+    FIZZ_BUZZ_WHIZZ("FizzBuzzWhizz");
 
     private String value;
 
