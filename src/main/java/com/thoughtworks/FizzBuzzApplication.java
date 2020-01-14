@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 public class FizzBuzzApplication {
 
     private static final Integer THREE = 3;
+    private static final Integer FIVE = 5;
     private static final Integer SEVEN = 7;
 
     public static void main(String[] args) {
@@ -24,10 +25,10 @@ public class FizzBuzzApplication {
         if (FizzBuzzUtil.contains(digit, THREE) && (StringUtils.containsNone(digit.toString(), "5") || FizzBuzzUtil.contains(digit, SEVEN))) {
             return FIZZ.getValue();
         }
-        if (digit % 3 == 0 && (StringUtils.containsNone(digit.toString(), "5") || FizzBuzzUtil.contains(digit, SEVEN))) {
+        if (digit % 3 == 0 && (FizzBuzzUtil.containsNone(digit, FIVE) || FizzBuzzUtil.contains(digit, SEVEN))) {
             res = StringUtils.join(res, FIZZ.getValue());
         }
-        if (digit % 5 == 0 && StringUtils.containsNone(digit.toString(), "7")) {
+        if (digit % 5 == 0 && FizzBuzzUtil.containsNone(digit, SEVEN)) {
             res = StringUtils.join(res, BUZZ.getValue());
         }
         if (digit % 7 == 0) {
