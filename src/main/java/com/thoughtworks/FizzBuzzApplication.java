@@ -17,13 +17,13 @@ public class FizzBuzzApplication {
 
     static String fizzBuzz(Integer digit) {
         String res = StringUtils.EMPTY;
-        if (digit.toString().contains("3") && StringUtils.containsNone(digit.toString(), "5")) {
+        if (digit.toString().contains("3") && (StringUtils.containsNone(digit.toString(), "5") || StringUtils.contains(digit.toString(), "5") && StringUtils.contains(digit.toString(), "7"))) {
             return FIZZ.getValue();
         }
-        if (digit % 3 == 0 && StringUtils.containsNone(digit.toString(), "5")) {
+        if (digit % 3 == 0 && (StringUtils.containsNone(digit.toString(), "5") || StringUtils.contains(digit.toString(), "5") && StringUtils.contains(digit.toString(), "7"))) {
             res = StringUtils.join(res, FIZZ.getValue());
         }
-        if (digit % 5 == 0) {
+        if (digit % 5 == 0 && StringUtils.containsNone(digit.toString(), "7")) {
             res = StringUtils.join(res, BUZZ.getValue());
         }
         if (digit % 7 == 0) {

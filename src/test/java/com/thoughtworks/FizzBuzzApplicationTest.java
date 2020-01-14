@@ -9,7 +9,6 @@ import static com.thoughtworks.common.FizzBuzzValue.FIZZ_BUZZ_WHIZZ;
 import static com.thoughtworks.common.FizzBuzzValue.WHIZZ;
 import static org.junit.Assert.assertEquals;
 
-import com.thoughtworks.util.GenerateUtil;
 import org.junit.Test;
 
 public class FizzBuzzApplicationTest {
@@ -64,22 +63,31 @@ public class FizzBuzzApplicationTest {
 
     @Test
     public void should_return_fizz_when_digit_contains_3_not_5_and_can_be_divided_evenly_by_multi_divider() {
-        Integer generate = GenerateUtil.generate("3", "5", 5, 7);
-        String result = fizzBuzz(generate);
+        String result = fizzBuzz(630);
         assertEquals(FIZZ.getValue(), result);
     }
 
     @Test
-    public void should_return_buzz_when_digit_contains_5() {
-        Integer generate = GenerateUtil.generate(2, "5", "3", 5);
-        String result = fizzBuzz(generate);
+    public void should_return_buzz_when_digit_contains_5_not_7() {
+        String result = fizzBuzz(15);
         assertEquals(BUZZ.getValue(), result);
     }
 
     @Test
-    public void should_return_buzz_when_digit_contains_5_and_can_be_divided_by_5_and_7() {
-        Integer generate = GenerateUtil.generate(1, "5", "", 5, 7);
-        String result = fizzBuzz(generate);
+    public void should_return_buzz_when_digit_contains_5_not_7_and_can_be_divided_by_5_and_7() {
+        String result = fizzBuzz(35);
         assertEquals(BUZZ_WHIZZ.getValue(), result);
+    }
+
+    @Test
+    public void should_return_fizz_when_digit_contains_7_and_5() {
+        String result = fizzBuzz(75);
+        assertEquals(FIZZ.getValue(), result);
+    }
+
+    @Test
+    public void should_return_fizz_when_digit_contains_7_and_5_and_3() {
+        String result = fizzBuzz(357);
+        assertEquals(FIZZ.getValue(), result);
     }
 }
